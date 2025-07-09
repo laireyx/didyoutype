@@ -1,0 +1,3 @@
+interface Ghost {
+  boo: () => void;
+}
