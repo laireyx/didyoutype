@@ -15,15 +15,6 @@ const overweightedPayload = {
   extra: "bar",
 };
 
-const subPayload1 = {
-  articleId: 1,
-};
-
-const subPayload2 = {
-  comment: "hi",
-  extra: "bar",
-};
-
 // 이렇게 사용하는 것에는 문제가 없습니다.
 writeComment(payload);
 
