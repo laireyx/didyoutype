@@ -1,4 +1,4 @@
-// 1줄 요약) 만일 공변성을 신경쓰지 않는다면, interface의 method에 가능하면 arrow function을 사용하세요.
+// 1줄 요약) 만일 공변성에 대한 의도가 담긴 것이 아니라면, interface의 method에 가능하면 arrow function을 사용하세요.
 
 interface Animal {
   type: string;
@@ -24,6 +24,7 @@ animalHouse = dogOnlyHouse;
 
 // 왜 오류가 발생하지 않는지에 대해서는 복잡한 설명이 필요하지만, 일단 해결책만 생각해봅시다.
 // 이런 경우에는 arrow function을 사용해서 이 문제를 해결할 수 있습니다.
+// in 혹은 out 키워드를 사용할 수도 있습니다.
 interface SafeHouse<Resident> {
   setHouseFor: (name: Resident) => void;
 }

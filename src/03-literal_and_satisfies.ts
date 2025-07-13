@@ -38,10 +38,10 @@ writeComment({
 } as WriteCommentRequest);
 
 // 하지만 as를 아무때에나 사용하기에는 위험한 점이 있습니다.
-// as는 변환되는 양쪽 타입이 부분집합의 관계이기만 하면, 어느 방향으로 포함되든지 관계없이 무조건 성공합니다.
+// as는 downcast 뿐 아니라 upcast에도 사용될 수 있으며, 이를 눈치채지 못한 경우에는 큰 문제가 발생할 수 있습닌다.
 const unsafePayload = { articleId: 1 } as WriteCommentRequest;
 
 // 이런 경우에는 `satisfies` 키워드를 사용해서 타입 체크를 할 수 있습니다.
-// 이렇게 필요한 필드가 빠져있는 경우 오류가 발생합니다.
+// 이렇게 upcast를 하면 필요한 필드가 빠져있는 경우 오류가 발생합니다.
 // @ts-expect-error
 const safePayload = { articleId: 1 } satisfies WriteCommentRequest;
